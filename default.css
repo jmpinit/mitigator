@@ -45,20 +45,18 @@ body {
 
 /* TASK PARTS */
 .task-info {
-	border-style: solid;
-	border-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
 }
 
 .task-description {
-	border-style: solid;
-	border-width: 1px;
 }
 
 /* BUBBBLESSSS */
 
 .content-bubble {
 	position: relative;
-	padding: 15px;
+	padding: 2px;
 	margin: 1px 0 1px;
 	color: #0;
 	background: #C0C0C0;
@@ -75,7 +73,7 @@ body {
 .column-bubble {
 	margin-right: 1px;
 	margin-left: 1px;
-	padding: 1em;
+	padding: 0.5em;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 15px;
