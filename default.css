@@ -1,3 +1,15 @@
+html * {
+	font-family: "Arial", Helvetica, sans-serif;
+}
+
+hr {
+	color: #000;
+	background-color: #000;
+	height: 5px;
+}
+
+/* THREE COLUMN STUFF */
+
 body {
 	min-width: 550px;      /* 2x LC width + RC width */
 }
@@ -29,4 +41,31 @@ body {
 
 #footer {
 	clear: both;
+}
+
+/* BUBBBLESSSS */
+
+.content-bubble {
+	position: relative;
+	padding: 15px;
+	margin: 1px 0 1px;
+	color: #0;
+	background: #C0C0C0;
+	/* css3 */
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#C0C0C0), to(#C0C0C0));
+	background: -moz-linear-gradient(#C0C0C0, #C0C0C0);
+	background: -o-linear-gradient(#C0C0C0, #C0C0C0);
+	background: linear-gradient(#C0C0C0, #C0C0C0);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.column-bubble {
+	margin-right: 1px;
+	margin-left: 1px;
+	padding: 1em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
 }
