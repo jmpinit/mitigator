@@ -4,40 +4,47 @@
 		<title>mitigator</title>
 		<link rel="stylesheet" href="default.css">
 	</head>
-	<body onload="makeRequest('a')">
+	<body onload="initialize()">
 		<script src="mitigator.js"></script>
 		
 		<div id="header">
-			<h3 class="content-bubble" style="padding: 1em;">~ mitigator ~</h3>
-			<hr>
+			<div class="content-bubble" style="padding: 1em;">
+				<h3>~ mitigator ~</h3>
+				<hr>
+				Sort by: <a class="sort" onclick="makeRequest('a')">name</a>
+				<a class="sort" onclick="summarize('1st task','tomorrow','some random task')">due date</a>
+			</div>
 		</div>
 
 		<div id="container">
 			<div id="center" class="column">
 				<div class="column-bubble">
-					<b>focus</b>
+					<b>task pool</b>
 					<hr>
-					<?php for ($i = 1; $i <= 10; $i++) { ?>
-						<div class="content-bubble">
-							<table style="width: 100%;"><tr>
-								<td><div class="task-info">
-									<table>
-										<tr>
-											<td>name:</td>
-											<td id="title">test task #<?=$i?></td>
-										</tr>
-										<tr>
-											<td>due date:</td>
-											<td>tomorrow</td>
-										</tr>
-									</table>
-								</div></td>
-								<td valign=top><div class="task-description">
-									This is a task necessary to test the system.
-								</div></td>
-							</tr></table>
-						</div>
-					<?php }?>
+					<div id="pool">
+					<!-- space for task summaries -->
+
+					<!-- template task summary -->
+					<div id="mock_summary" class="content-bubble">
+						<table style="width: 100%;"><tr>
+							<td><div class="task-info">
+								<table>
+									<tr>
+										<td>name:</td>
+										<td id="name"> </td>
+									</tr>
+									<tr>
+										<td>due date:</td>
+										<td id="due"> </td>
+									</tr>
+								</table>
+							</div></td>
+							<td valign=top><div id="desc" class="task-description">
+								 
+							</div></td>
+						</tr></table>
+					</div>
+					</div>
 				</div>
 			</div>
 			
