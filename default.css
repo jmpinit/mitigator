@@ -47,6 +47,7 @@ body {
 .task-info {
 	border-right-style: solid;
 	border-right-width: 1px;
+	width: 16em;
 }
 
 .task-description {
