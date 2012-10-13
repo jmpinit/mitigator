@@ -46,22 +46,33 @@ body {
 
 /* GUI */
 .sort {
-	background-color:#ededed;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-size:1em;
-	font-weight:bold;
-	padding:1em 1em;
-	text-decoration:none;
+	background-color: #ededed;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	color: #777777;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 1em 1em;
+	text-decoration: none;
 }.sort:hover {
-	background-color:#dfdfdf;
+	background-color: #dfdfdf;
 }.sort:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
+}
+
+/* COLLECTIONS */
+.collection {
+	background-color: #000000;
+	color: #FFFFFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-weight: bold;
 }
 
 /* TASK PARTS */

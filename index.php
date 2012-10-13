@@ -52,6 +52,7 @@
 				<div class="column-bubble">
 					<b>collections</b>
 					<hr>
+					<p class="collection">important</p>
 				</div>
 			</div>
 			
