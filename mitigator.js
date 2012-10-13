@@ -55,38 +55,4 @@ function summarize(name, due, desc) {
 	
 	pool.appendChild(new_summary);
 }
-
-function makeSummary(name, due, desc) {
-	var task = document.createElement('div');
-	task.setAttribute('class', 'content-bubble');
-	
-	var table = document.createElement('table');
-	table.setAttribute('style', 'width: 100%;');
-	task.appendChild(table);
-	
-	var icol = document.createElement('td');
-	var dcol = document.createElement('td');
-	table.appendChild(icol);
-	table.appendChild(dcol);
-	
-	//create info section
-	var info = document.createElement('table');
-	
-	var name_row = document.createElement('tr');
-	name_row.appendChild(document.createElement('td').appendChild(document.createTextNode("name:")));
-	name_row.appendChild(document.createElement('td').appendChild(document.createTextNode(name)));
-	info.appendChild(name_row);
-	
-	var due_row = document.createElement('tr');
-	due_row.appendChild(document.createElement('td').appendChild(document.createTextNode("due date:")));
-	due_row.appendChild(document.createElement('td').appendChild(document.createTextNode(due)));
-	info.appendChild(due_row);
-	
-	icol.appendChild(info);
-	
-	//create description section
-	dcol.appendChild(document.createTextNode(desc));
-	
-	document.getElementById('pool').appendChild(task);
-}
 //</script>
