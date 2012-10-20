@@ -11,8 +11,8 @@
 			<div class="content-bubble" style="padding: 1em;">
 				<h3>~ mitigator ~</h3>
 				<hr>
-				Sort by: <a class="sort" onclick="makeRequest('a')">name</a>
-				<a class="sort" onclick="summarize('1st task','tomorrow','some random task')">due date</a>
+				Sort by: <a class="sort" onclick="updateCollections()">name</a>
+				<a class="sort" onclick="updateTasks()">due date</a>
 			</div>
 		</div>
 
@@ -52,7 +52,9 @@
 				<div class="column-bubble">
 					<b>collections</b>
 					<hr>
-					<p class="collection">important</p>
+					<div id="collections">
+						<p id="mock_collection" class="collection">rawr</p>
+					</div>
 				</div>
 			</div>
 			

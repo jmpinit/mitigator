@@ -1,25 +1,96 @@
 //<script>
 
+//UI
 var mock_summary;
-var pool;
+var mock_collection;
+var ui_pool;
+var ui_collections;
+
+//USER DATA
+var collections = [];
+var current_collection = "development";
+
+var tasks = [];
 
 function initialize() {
-	pool = document.getElementById('pool');
+	ui_pool = document.getElementById('pool');
 	
 	var src = document.getElementById('mock_summary');
 	mock_summary = src.cloneNode(true);
-	pool.removeChild(src);
+	ui_pool.removeChild(src);
+	
+	ui_collections = document.getElementById('collections');
+	var src = document.getElementById('mock_collection');
+	mock_collection = src.cloneNode(true);
+	ui_collections.removeChild(src);
+}
+
+function updateTasks() {
+	if(current_collection) {
+		xmlhttp = new XMLHttpRequest();
+		
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				//store the data
+				alert(xmlhttp.responseText);
+				var parts = xmlhttp.responseText.split(",");
+				parts.splice(-1, 1);
+				tasks = parts;
+				
+				//clear
+				for(var c=0; c<ui_pool.childNodes.length; c++) {
+					ui_pool.removeChild(ui_pool.childNodes[c]);
+				}
+				
+				//update the UI
+				/*for(var i in collections) {
+					var new_collection = mock_collection.cloneNode(true);
+					new_collection.innerHTML = collections[i];
+					ui_collections.appendChild(new_collection);
+				}*/
+			}
+		}
+		
+		xmlhttp.open("GET","getinfo.php?q=tasks&c="+current_collection, true);
+		xmlhttp.send();
+	}
+}
+
+function updateCollections() {
+	xmlhttp = new XMLHttpRequest();
+	
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+			//store the data
+			var parts = xmlhttp.responseText.split(",");
+			parts.splice(-1, 1);
+			collections = parts;
+			
+			//clear
+			for(var c=0; c<ui_collections.childNodes.length; c++) {
+				ui_collections.removeChild(ui_collections.childNodes[c]);
+			}
+			
+			//update the UI
+			for(var i in collections) {
+				var new_collection = mock_collection.cloneNode(true);
+				new_collection.innerHTML = collections[i];
+				ui_collections.appendChild(new_collection);
+			}
+		}
+	}
+	
+	xmlhttp.open("GET","getinfo.php?q=collections", true);
+	xmlhttp.send();
 }
 
 function makeRequest(request) {
-	document.getElementById("title").innerHTML = "getting task...";
-	
 	xmlhttp = new XMLHttpRequest();
 	
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			//do something with the response
-			document.getElementById("title").innerHTML = xmlhttp.responseText;
+			alert(xmlhttp.responseText);
 		}
 	}
 	
