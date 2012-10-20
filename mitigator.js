@@ -7,6 +7,17 @@ var ui_pool;
 var ui_collections;
 
 //USER DATA
+var INFO_TASK = {
+	name: 0,
+	description: 1,
+	notes: 2,
+	creation: 3,
+	due: 4,
+	modified: 5,
+	completed: 6,
+	priority: 7
+}
+
 var collections = [];
 var current_collection = "development";
 
@@ -34,7 +45,10 @@ function updateTasks() {
 				//store the data
 				var parts = xmlhttp.responseText.split(";");
 				parts.splice(-1, 1);
-				tasks = parts;
+				
+				for(var i in parts) {
+					tasks = parts[i].split(",");
+				}
 				
 				//clear
 				while (ui_pool.hasChildNodes()) {
@@ -42,7 +56,7 @@ function updateTasks() {
 				}
 				
 				//update the UI
-				summarize("a task", "---", tasks[0]);
+				summarize(tasks[INFO_TASK.name], tasks[INFO_TASK.due], tasks[INFO_TASK.description]);
 			}
 		}
 		
