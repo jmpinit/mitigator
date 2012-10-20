@@ -32,22 +32,17 @@ function updateTasks() {
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 				//store the data
-				alert(xmlhttp.responseText);
-				var parts = xmlhttp.responseText.split(",");
+				var parts = xmlhttp.responseText.split(";");
 				parts.splice(-1, 1);
 				tasks = parts;
 				
 				//clear
-				for(var c=0; c<ui_pool.childNodes.length; c++) {
-					ui_pool.removeChild(ui_pool.childNodes[c]);
+				while (ui_pool.hasChildNodes()) {
+					ui_pool.removeChild(ui_pool.lastChild);
 				}
 				
 				//update the UI
-				/*for(var i in collections) {
-					var new_collection = mock_collection.cloneNode(true);
-					new_collection.innerHTML = collections[i];
-					ui_collections.appendChild(new_collection);
-				}*/
+				summarize("a task", "---", tasks[0]);
 			}
 		}
 		
@@ -67,8 +62,8 @@ function updateCollections() {
 			collections = parts;
 			
 			//clear
-			for(var c=0; c<ui_collections.childNodes.length; c++) {
-				ui_collections.removeChild(ui_collections.childNodes[c]);
+			while (ui_collections.hasChildNodes()) {
+				ui_collections.removeChild(ui_collections.lastChild);
 			}
 			
 			//update the UI
