@@ -5,6 +5,13 @@ Types of Objects
 * group
 * link
 
+Examples
+========
+
+What kind of object is an example? How does it relate to the concept that it is an example of?
+
+_Answer:_ OOP philosophy provides a useful analogy. The Concept could be considered a class, and the Example an instantiation of that class.
+
 Equivalence
 ===========
 
